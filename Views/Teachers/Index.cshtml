@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Teachers";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <table id="teachersTable">
+        <thead>
+            <tr>
+                <td>SchoolId</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>State</td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+
+@section scripts {
+    <script>
+
+        $("#teachersTable").DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "Previous page",
+                    "next": "Next page"
+                },
+                "pagingType": "full_numbers"
+            },
+            "ordering": true,
+            "order": [[0, "asc"]],
+            pageLength: 10,
+            responsive: {
+                breakpoints: [
+                    { name: 'bigdesktop', width: Infinity },
+                    { name: 'meddesktop', width: 1480 },
+                    { name: 'smalldesktop', width: 1280 },
+                    { name: 'medium', width: 1188 },
+                    { name: 'tabletl', width: 1024 },
+                    { name: 'btwtabllandp', width: 848 },
+                    { name: 'tabletp', width: 768 },
+                    { name: 'mobilel', width: 480 },
+                    { name: 'mobilep', width: 320 }
+                ]
+            },
+            /* Disable initial sort
+            aaSorting: [[3, 'desc']],
+            scrollY: 400,*/
+            paging: true,
+            ajax: {
+                url: "/Teachers/GetTeachers",
+                dataSrc: 'data'
+            },
+            columns: [
+                {
+                    data: "SchoolId"
+                },
+                {
+                    data: "Name"
+                },
+                {
+                    data: "Address"
+                },
+                {
+                    data: "State"
+                }
+               
+            ]
+        });
+
+
+
+        //$(document).ready(function () {
+        //    $('#teachersTable').DataTable({
+        //        "processing": true,
+        //        "serverSide": false,
+        //        "filter": true,
+        //        "orderMulti": true,
+        //        "ajax": {
+        //            "url": "Teachers/GetTeachers",
+        //            "type": "GET",
+        //            "dataType": "json"
+        //        },
+        //        "columns": [
+        //            { "data": "SchoolId", "autoWidth": true },
+        //            { "data": "Name", "autoWidth": true },
+        //            { "data": "Address", "autoWidth": true },
+        //            { "data": "State", "autoWidth": true },
+                    
+
+        //            //{ "data": "", "autoWidth": true }
+        //            //{ "data": "", "autoWidth": true }
+        //            //{ "data": "", "autoWidth": true }
+        //            //{ "data": "", "autoWidth": true }
+        //            //         { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //            //        { "data": "", "autoWidth": true }
+        //        ]
+
+        //    });
+        //});
+    </script>
+
+}

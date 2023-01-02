@@ -1,0 +1,28 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+
+@if (ViewData["ErrorTitle"] == null)
+{
+
+    <h2 class="text-danger">
+        An error occured while processing your request. The support team is notified and we are working on the fix.
+    </h2>
+
+    @*<h1 class="text-danger">Admin role is in use.</h1>
+    <h2 class="text-danger">
+        Admin role can not be deleted as there are users in this role.
+        If you want to delete this role, please remove the users from the role and try to delete again.
+    </h2>*@
+
+}
+else
+{
+    <h3 class="text-danger">@ViewData["ErrorTitle"]</h3>
+    <h5 class="text-danger">@ViewData["ErrorMessage"]</h5>
+
+}
+

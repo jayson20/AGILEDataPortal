@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "User Managemnt";
+    Layout = "/Views/Shared/Layout.cshtml";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <a asp-controller="Account" asp-action="Register" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-user fa-sm text-white-50"></i> Add New User
+        </a>
+    </div>
+
+
+
+
+    @if (Model.Any())
+    {
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">All Users</h6>
+            </div>
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+
+                            @foreach (var user in Model)
+                            {
+                                <tr>
+                                    <td>@user.FirstName  @user.LastName</td>
+                                    <td>@user.Email</td>
+
+                                    <td>
+                                        <div class="row">
+                                            
+                                            <div class="col">
+                                                <form method="post" asp-action="DeleteUser" asp-route-Id="@user.Id">
+                                                    <a href="@Url.Action("UserManagement", "Admin", new { Id = user.Id })" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">View User </a>
+                                                    <a class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm" asp-controller="admin" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
+                                                    <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="return confirm('Are you sure youn want to delete user: @user.UserName')">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    
+                                    </td>
+                                   @* <td>
+                                        <form method="post" asp-action="DeleteUser" asp-route-Id="@user.Id">
+                                            <a class="btn btn-primary" asp-controller="admin" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure youn want to delete user: @user.UserName')">Delete</button>
+                                        </form>
+                                    </td>*@
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>No user found</p>
+    }
+
+</div>

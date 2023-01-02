@@ -1,0 +1,249 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>AGILE - Home</title>
+
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet" />
+
+    <link href="~/favicon.png" rel="icon" />
+    <!-- <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar fixed-top" style="background-color: white;">
+        <div class="container">
+            <h1>
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand fs-3">
+                    <span style="color: #1A4314;">AGILE</span><span style="color: #ffbf00;">Portal</span>
+                </a>
+            </h1>
+            
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class=""><i class="bi bi-list"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                
+                <div class="navbar-nav ms-auto">
+                    <a asp-controller="Account" asp-action="Login" class="nav-link btn rounded-5 btn-lg"
+                       style="color:white; background-color: #1A4314; ">Dashboards</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div style="overflow-x: hidden">
+
+        <!-- Showcase -->
+        <section class="text-dark p-5 p-lg-0 pt-lg-5 text-sm-start">
+            <div class="container align-items-center justify-content-between">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="m-3" data-aos="fade-right" data-aos-duration="1000">
+                        <div>
+                            <h1>
+                                Welcome to <br /><span style="color: #ffbf00">A.G.I.L.E.</span>
+                                Data Portal
+
+                            </h1>
+                            <h3 class="my-4">
+
+                                This Portal offers analysis, using data visualization and data analysis tools as well as reliable
+                                assessment data to help you make informed decisions.
+                            </h3>
+                        </div>
+                       
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <a asp-controller="Account" asp-action="Login" class="btn text-white mt-3 btn-lg rounded-5 fs-3"
+                               style="background-color: #1A4314">Login</a>
+                        </div>
+                        
+                    </div>
+
+
+                    @*<div class="col-md" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="./img/contact1.svg" class="img-fluid w-40 rounded" alt=""
+                             style="height: 350px; width: 500px" />
+                    </div>*@
+
+                    <div class=" p-5 img-fluid w40 d-none d-sm-block"
+                         style="height: 500px; width: 1200px;" data-aos="fade-down" data-aos-duration="1000">
+                        <img class="img-fluid w-40 rounded" alt=""
+                             style="height: 350px; width: 500px" src="~/img/book girl svg.svg" />
+
+                        @*<img src="./img/computer.gif" class="" alt="" />*@
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions aboutus-->
+        
+
+        <!-- Questions Accordion-->
+       
+
+        <!-- Contact Us -->
+
+        <!-- Footer -->
+        <footer class="text-white text-center">
+            <div class="container">
+
+               
+                <p class="lead pt-5" style="color: #1A4314;">Copyright &copy; 2022 AGILE Data Portal</p>
+
+
+                <!-- <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                    <i class="bi bi-arrow-up-circle h1"></i>
+                </a> -->
+            </div>
+        </footer>
+
+       
+    </div>
+    <!-- <script src="https://unpkg.com/vue@next"></script>  -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script src="app.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div>
+    <table id="schoolsTable">
+        <thead>
+            <tr>
+                <td>SchoolId</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>State</td>
+                <td>TotalNumberOfStudents</td>
+                <td>NumberOfICTTeachers</td>
+                <td>NumberOfComputersInLabs</td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+
+@section scripts {
+    <script>
+
+        $("#schoolsTable").DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "Previous page",
+                    "next": "Next page"
+                },
+                "pagingType": "full_numbers"
+            },
+            "ordering": true,
+            "order": [[0, "asc"]],
+            pageLength: 10,
+            responsive: {
+                breakpoints: [
+                    { name: 'bigdesktop', width: Infinity },
+                    { name: 'meddesktop', width: 1480 },
+                    { name: 'smalldesktop', width: 1280 },
+                    { name: 'medium', width: 1188 },
+                    { name: 'tabletl', width: 1024 },
+                    { name: 'btwtabllandp', width: 848 },
+                    { name: 'tabletp', width: 768 },
+                    { name: 'mobilel', width: 480 },
+                    { name: 'mobilep', width: 320 }
+                ]
+            },
+            /* Disable initial sort
+            aaSorting: [[3, 'desc']],
+            scrollY: 400,*/
+            paging: true,
+            ajax: {
+                url: "/Schools/GetSchools",
+                dataSrc: 'data'
+            },
+            columns: [
+                {
+                    data: "SchoolId"
+                },
+                {
+                    data: "Name"
+                },
+                {
+                    data: "Address"
+                },
+                {
+                    data: "State"
+                },
+                {
+                    data: "TotalNumberOfStudents"
+                },
+                {
+                    data: "NumberOfICTTeachers"
+                },
+                {
+                    data: "NumberOfComputersInLabs"
+                }
+            ]
+        });
+    </script>
+   
+
+}*@
+
+
+

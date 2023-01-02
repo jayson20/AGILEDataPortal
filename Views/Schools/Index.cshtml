@@ -1,0 +1,93 @@
+﻿@model IEnumerable<AGILEClassLibrary.School>
+@{
+    ViewData["Title"] = "All Schools";
+    Layout = "/Views/Shared/Layout.cshtml";
+}
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+
+
+    @if (Model.Any())
+    {
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Schools</h6>
+            </div>
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>LGA</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th style="width: 16.66%">Actions</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>LGA</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Actions</th>
+                            </tr>
+                        </tfoot>
+
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Address</td>
+                                    <td>@item.LGA</td>
+                                    <td>@item.Latitude</td>
+                                    <td>@item.Longitude</td>
+                                    <td>
+                                        <div class="row">
+
+                                            <div class="col">
+                                                <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" asp-action="Detail" asp-route-id="@item.Id">
+                                                    <i class="fas fa-eye"></i> 
+                                                </a>
+                                                <a class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm" asp-action="Edit" asp-route-id="@item.Id">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" asp-action="Delete" asp-route-id="@item.Id">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                @*<form method="post" asp-action="DeleteUser" asp-route-Id="@item.Id">
+                                                    <a href="@Url.Action("UserManagement", "Admin", new { Id = item.Id })" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">View School </a>
+                                                    <a class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm" asp-controller="admin" asp-action="EditUser" asp-route-id="@item.Id">Edit</a>
+                                                    <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="return confirm('Are you sure youn want to delete user: @item.Name')">Delete</button>
+                                                </form>*@
+                                            </div>
+                                        </div>
+                                          
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>No user found</p>
+    }
+
+</div>
+

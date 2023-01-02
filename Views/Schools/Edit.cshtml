@@ -1,0 +1,376 @@
+﻿@model SchoolEditViewModel
+@{
+    ViewData["Title"] = "Edit School";
+    Layout = "/Views/Shared/Layout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">School List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit School</li>
+                </ol>
+            </nav><br />
+
+            <div><h2 class="text-center" style="color: green">@ViewBag.message</h2></div>
+
+            <form method="post" enctype="multipart/form-data" asp-action="Edit">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" id="editName" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address"></label>
+                    <input asp-for="Address" class="form-control" id="editName" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label asp-for="LGA"></label>
+                        <input asp-for="LGA" class="form-control" id="editName" />
+                        <span asp-validation-for="LGA" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="State"></label>
+                        <input asp-for="State" class="form-control" id="editName" />
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="Latitude"></label>
+                        <input asp-for="Latitude" class="form-control" id="editName" />
+                        <span asp-validation-for="Latitude" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="Longitude"></label>
+                        <input asp-for="Longitude" class="form-control" id="editName" />
+                        <span asp-validation-for="Longitude" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label asp-for="SchoolType1"></label>
+                        <input asp-for="SchoolType1" class="form-control" id="editName" />
+                        <span asp-validation-for="SchoolType1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="SchoolType2"></label>
+                        <input asp-for="SchoolType2" class="form-control" id="editName" />
+                        <span asp-validation-for="SchoolType2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="SchoolType3"></label>
+                        <input asp-for="SchoolType3" class="form-control" id="editName" />
+                        <span asp-validation-for="SchoolType3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="SchoolType4"></label>
+                        <input asp-for="SchoolType4" class="form-control" id="editName" />
+                        <span asp-validation-for="SchoolType4" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label asp-for="TotalNumberOfStudents"></label>
+                        <input asp-for="TotalNumberOfStudents" class="form-control" id="editName" />
+                        <span asp-validation-for="TotalNumberOfStudents" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="NumberOfICTTeachers"></label>
+                        <input asp-for="NumberOfICTTeachers" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfICTTeachers" class="text-danger"></span>
+                    </div>
+                    @* <div class="form-group col-md-3">
+                    <label asp-for="SchoolType3"></label>
+                    <input asp-for="SchoolType3" class="form-control" id="editName" />
+                    <span asp-validation-for="SchoolType3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                    <label asp-for="SchoolType4"></label>
+                    <input asp-for="SchoolType4" class="form-control" id="editName" />
+                    <span asp-validation-for="SchoolType4" class="text-danger"></span>
+                    </div>*@
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfBoysJss1"></label>
+                        <input asp-for="NumberOfBoysJss1" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfBoysJss1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfBoysJss2"></label>
+                        <input asp-for="NumberOfBoysJss2" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfBoysJss2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfBoysJss3"></label>
+                        <input asp-for="NumberOfBoysJss3" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfBoysJss3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfBoysSss1"></label>
+                        <input asp-for="NumberOfBoysSss1" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfBoysSss1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfBoysSss2"></label>
+                        <input asp-for="NumberOfBoysSss2" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfBoysSss2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfBoysSss3"></label>
+                        <input asp-for="NumberOfBoysJss3" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfBoysJss3" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfGirlsJss1"></label>
+                        <input asp-for="NumberOfGirlsJss1" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfGirlsJss1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfGirlsJss2"></label>
+                        <input asp-for="NumberOfGirlsJss2" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfGirlsJss2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfGirlsJss3"></label>
+                        <input asp-for="NumberOfGirlsJss3" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfGirlsJss3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfGirlsSss1"></label>
+                        <input asp-for="NumberOfGirlsSss1" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfGirlsSss1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfGirlsSss2"></label>
+                        <input asp-for="NumberOfGirlsSss2" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfGirlsSss2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfGirlsSss3"></label>
+                        <input asp-for="NumberOfGirlsJss3" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfGirlsJss3" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfLaptops"></label>
+                        <input asp-for="NumberOfLaptops" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfLaptops" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfDesktops"></label>
+                        <input asp-for="NumberOfDesktops" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfDesktops" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfCompLabs"></label>
+                        <input asp-for="NumberOfCompLabs" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfCompLabs" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfComputersInLabs"></label>
+                        <input asp-for="NumberOfComputersInLabs" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfComputersInLabs" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfColorPrinter"></label>
+                        <input asp-for="NumberOfColorPrinter" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfColorPrinter" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NumberOfBlackAndWhitePrinter"></label>
+                        <input asp-for="NumberOfBlackAndWhitePrinter" class="form-control" id="editName" />
+                        <span asp-validation-for="NumberOfBlackAndWhitePrinter" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="NetwPerihpCables"></label>
+                        <input asp-for="NetwPerihpCables" class="form-control" id="editName" />
+                        <span asp-validation-for="NetwPerihpCables" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NetwPerihpRouters"></label>
+                        <input asp-for="NetwPerihpRouters" class="form-control" id="editName" />
+                        <span asp-validation-for="NetwPerihpRouters" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NetwPerihpSwitches"></label>
+                        <input asp-for="NetwPerihpSwitches" class="form-control" id="editName" />
+                        <span asp-validation-for="NetwPerihpSwitches" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="LAN"></label>
+                        <input asp-for="LAN" class="form-control" id="editName" />
+                        <span asp-validation-for="LAN" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="ScreenProjector"></label>
+                        <input asp-for="ScreenProjector" class="form-control" id="editName" />
+                        <span asp-validation-for="ScreenProjector" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Software"></label>
+                        <input asp-for="Software" class="form-control" id="editName" />
+                        <span asp-validation-for="Software" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="NetwPerihpCables"></label>
+                        <input asp-for="NetwPerihpCables" class="form-control" id="editName" />
+                        <span asp-validation-for="NetwPerihpCables" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NetwPerihpRouters"></label>
+                        <input asp-for="NetwPerihpRouters" class="form-control" id="editName" />
+                        <span asp-validation-for="NetwPerihpRouters" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="NetwPerihpSwitches"></label>
+                        <input asp-for="NetwPerihpSwitches" class="form-control" id="editName" />
+                        <span asp-validation-for="NetwPerihpSwitches" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="LAN"></label>
+                        <input asp-for="LAN" class="form-control" id="editName" />
+                        <span asp-validation-for="LAN" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="ScreenProjector"></label>
+                        <input asp-for="ScreenProjector" class="form-control" id="editName" />
+                        <span asp-validation-for="ScreenProjector" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Software"></label>
+                        <input asp-for="Software" class="form-control" id="editName" />
+                        <span asp-validation-for="Software" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="InternetAvailability"></label>
+                        <input asp-for="InternetAvailability" class="form-control" id="editName" />
+                        <span asp-validation-for="InternetAvailability" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="InternetRating"></label>
+                        <input asp-for="InternetRating" class="form-control" id="editName" />
+                        <span asp-validation-for="InternetRating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="TypeOfInternet"></label>
+                        <input asp-for="TypeOfInternet" class="form-control" id="editName" />
+                        <span asp-validation-for="TypeOfInternet" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="TelcoServicesMTN"></label>
+                        <input asp-for="TelcoServicesMTN" class="form-control" id="editName" />
+                        <span asp-validation-for="TelcoServicesMTN" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="TelcoServicesAirtel"></label>
+                        <input asp-for="TelcoServicesAirtel" class="form-control" id="editName" />
+                        <span asp-validation-for="TelcoServicesAirtel" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="TelcoServicesGlo"></label>
+                        <input asp-for="TelcoServicesGlo" class="form-control" id="editName" />
+                        <span asp-validation-for="TelcoServicesGlo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="TelcoServices9Mobile"></label>
+                        <input asp-for="TelcoServices9Mobile" class="form-control" id="editName" />
+                        <span asp-validation-for="TelcoServices9Mobile" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="PowerSource_Public"></label>
+                        <input asp-for="PowerSource_Public" class="form-control" id="editName" />
+                        <span asp-validation-for="PowerSource_Public" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="PowerSource_Generator"></label>
+                        <input asp-for="PowerSource_Generator" class="form-control" id="editName" />
+                        <span asp-validation-for="PowerSource_Generator" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="PowerSource_Iverter"></label>
+                        <input asp-for="PowerSource_Iverter" class="form-control" id="editName" />
+                        <span asp-validation-for="PowerSource_Iverter" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="PowerSource_Solar"></label>
+                        <input asp-for="PowerSource_Solar" class="form-control" id="editName" />
+                        <span asp-validation-for="PowerSource_Solar" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="SecurityWindows"></label>
+                        <input asp-for="SecurityWindows" class="form-control" id="editName" />
+                        <span asp-validation-for="SecurityWindows" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="SecurityDoors"></label>
+                        <input asp-for="SecurityDoors" class="form-control" id="editName" />
+                        <span asp-validation-for="SecurityDoors" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="SecurityGateman"></label>
+                        <input asp-for="SecurityGateman" class="form-control" id="editName" />
+                        <span asp-validation-for="SecurityGateman" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="PerimeterFence"></label>
+                        <input asp-for="PerimeterFence" class="form-control" id="editName" />
+                        <span asp-validation-for="PerimeterFence" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="SecurityNightGuard"></label>
+                        <input asp-for="SecurityNightGuard" class="form-control" id="editName" />
+                        <span asp-validation-for="SecurityNightGuard" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="CCTV"></label>
+                        <input asp-for="CCTV" class="form-control" id="editName" />
+                        <span asp-validation-for="CCTV" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Update</button>
+                    <a asp-action="index" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm btn-danger float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

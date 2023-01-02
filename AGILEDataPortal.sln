@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGILEDataPortal", "AGILEDataPortal.csproj", "{08210DCF-0A69-485C-816E-E4F0150F321C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGILEPortalEntity", "..\AGILEPortalEntity\AGILEPortalEntity.csproj", "{FE973CE0-4381-49F6-9777-061735C602CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08210DCF-0A69-485C-816E-E4F0150F321C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08210DCF-0A69-485C-816E-E4F0150F321C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08210DCF-0A69-485C-816E-E4F0150F321C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08210DCF-0A69-485C-816E-E4F0150F321C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE973CE0-4381-49F6-9777-061735C602CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE973CE0-4381-49F6-9777-061735C602CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE973CE0-4381-49F6-9777-061735C602CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE973CE0-4381-49F6-9777-061735C602CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6DD9BF1-260D-4923-A254-87E14A4C86AF}
+	EndGlobalSection
+EndGlobal
