@@ -23,8 +23,13 @@
 
                 <div class="form-group">
                     <label asp-for="Name"></label>
-                    <input asp-for="Name" class="form-control" id="editName" />
+                    <input asp-for="Name" class="form-control" type="text" id="editName" />
                     <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UniqueName"></label>
+                    <input asp-for="Name" value="Name" disabled class="form-control" type="text" id="editName" />
+                    <span asp-validation-for="UniqueName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Address"></label>
@@ -40,7 +45,7 @@
                     <div class="form-group col-md-3">
                         <label asp-for="State"></label>
                         <input asp-for="State" class="form-control" id="editName" />
-                        <span asp-validation-for="State" class="text-danger"></span>
+                        <span asp-validation-for="State" type="text" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-3">
                         <label asp-for="Latitude"></label>
@@ -80,12 +85,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label asp-for="TotalNumberOfStudents"></label>
-                        <input asp-for="TotalNumberOfStudents" class="form-control" id="editName" />
+                        <input asp-for="TotalNumberOfStudents" type="number" class="form-control" id="editName" />
                         <span asp-validation-for="TotalNumberOfStudents" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-3">
                         <label asp-for="NumberOfICTTeachers"></label>
-                        <input asp-for="NumberOfICTTeachers" class="form-control" id="editName" />
+                        <input asp-for="NumberOfICTTeachers" type="number"class="form-control" id="editName" />
                         <span asp-validation-for="NumberOfICTTeachers" class="text-danger"></span>
                     </div>
                     @* <div class="form-group col-md-3">
@@ -103,32 +108,32 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfBoysJss1"></label>
-                        <input asp-for="NumberOfBoysJss1" class="form-control" id="editName" />
+                        <input asp-for="NumberOfBoysJss1" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfBoysJss1" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfBoysJss2"></label>
-                        <input asp-for="NumberOfBoysJss2" class="form-control" id="editName" />
+                        <input asp-for="NumberOfBoysJss2" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfBoysJss2" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfBoysJss3"></label>
-                        <input asp-for="NumberOfBoysJss3" class="form-control" id="editName" />
+                        <input asp-for="NumberOfBoysJss3" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfBoysJss3" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfBoysSss1"></label>
-                        <input asp-for="NumberOfBoysSss1" class="form-control" id="editName" />
+                        <input asp-for="NumberOfBoysSss1" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfBoysSss1" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfBoysSss2"></label>
-                        <input asp-for="NumberOfBoysSss2" class="form-control" id="editName" />
+                        <input asp-for="NumberOfBoysSss2" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfBoysSss2" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfBoysSss3"></label>
-                        <input asp-for="NumberOfBoysJss3" class="form-control" id="editName" />
+                        <input asp-for="NumberOfBoysJss3" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfBoysJss3" class="text-danger"></span>
                     </div>
 
@@ -137,22 +142,22 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfGirlsJss1"></label>
-                        <input asp-for="NumberOfGirlsJss1" class="form-control" id="editName" />
+                        <input asp-for="NumberOfGirlsJss1" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfGirlsJss1" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfGirlsJss2"></label>
-                        <input asp-for="NumberOfGirlsJss2" class="form-control" id="editName" />
+                        <input asp-for="NumberOfGirlsJss2" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfGirlsJss2" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfGirlsJss3"></label>
-                        <input asp-for="NumberOfGirlsJss3" class="form-control" id="editName" />
+                        <input asp-for="NumberOfGirlsJss3" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfGirlsJss3" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfGirlsSss1"></label>
-                        <input asp-for="NumberOfGirlsSss1" class="form-control" id="editName" />
+                        <input asp-for="NumberOfGirlsSss1" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfGirlsSss1" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
@@ -162,7 +167,7 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfGirlsSss3"></label>
-                        <input asp-for="NumberOfGirlsJss3" class="form-control" id="editName" />
+                        <input asp-for="NumberOfGirlsJss3" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfGirlsJss3" class="text-danger"></span>
                     </div>
 
@@ -171,32 +176,32 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfLaptops"></label>
-                        <input asp-for="NumberOfLaptops" class="form-control" id="editName" />
+                        <input asp-for="NumberOfLaptops" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfLaptops" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfDesktops"></label>
-                        <input asp-for="NumberOfDesktops" class="form-control" id="editName" />
+                        <input asp-for="NumberOfDesktops" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfDesktops" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfCompLabs"></label>
-                        <input asp-for="NumberOfCompLabs" class="form-control" id="editName" />
+                        <input asp-for="NumberOfCompLabs" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfCompLabs" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfComputersInLabs"></label>
-                        <input asp-for="NumberOfComputersInLabs" class="form-control" id="editName" />
+                        <input asp-for="NumberOfComputersInLabs" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfComputersInLabs" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfColorPrinter"></label>
-                        <input asp-for="NumberOfColorPrinter" class="form-control" id="editName" />
+                        <input asp-for="NumberOfColorPrinter" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfColorPrinter" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="NumberOfBlackAndWhitePrinter"></label>
-                        <input asp-for="NumberOfBlackAndWhitePrinter" class="form-control" id="editName" />
+                        <input asp-for="NumberOfBlackAndWhitePrinter" class="form-control" type="number" id="editName" />
                         <span asp-validation-for="NumberOfBlackAndWhitePrinter" class="text-danger"></span>
                     </div>
 

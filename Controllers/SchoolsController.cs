@@ -32,7 +32,7 @@ namespace AGILEDataPortal.Controllers
         public async Task<IActionResult> Index()
         {
             _schools = new List<School>();
-            var domain = "https://localhost:5001/api/schools/GetSchools";
+            var domain = "https://eregapis-agileapi.azurewebsites.net/api/schools/GetSchools";
             using (var httpClient = new HttpClient(_clientHandler))
             {
                 using (var response = await httpClient.GetAsync(domain))
@@ -42,75 +42,6 @@ namespace AGILEDataPortal.Controllers
                 }
             }
 
-
-            var school = new SchoolIndexViewModel();
-
-            //foreach (var sch in _schools)
-            //{
-            //    school.SchoolId = sch.Id;
-            //    school.Name = sch.Name;
-            //    school.UniqueName = sch.UniqueName;
-            //    school.LGA = sch.LGA;
-            //    school.Longitude = sch.Longitude;
-            //    school.Latitude = sch.Latitude;
-            //    school.ScreenProjector = sch.ScreenProjector;
-            //    school.Address = sch.Address;
-            //    school.InternetAvailability = sch.InternetAvailability;
-            //    school.InternetRating = sch.InternetRating;
-            //    school.PerimeterFence = sch.PerimeterFence;
-            //    school.SchoolType1 = sch.SchoolType1;
-            //    school.SchoolType2 = sch.SchoolType2;
-            //    school.SchoolType3 = sch.SchoolType3;
-            //    school.SchoolType4 = sch.SchoolType4;
-            //    school.TypeOfInternet = sch.TypeOfInternet;
-            //    school.State = sch.State;
-            //    school.CCTV = sch.CCTV;
-            //    school.NumberOfBoysJss1 = sch.NumberOfBoysJss1;
-            //    school.NumberOfBoysJss2 = sch.NumberOfBoysJss2;
-            //    school.NumberOfBoysJss3 = sch.NumberOfBoysJss2;
-            //    school.NumberOfBoysSss1 = sch.NumberOfBoysSss1;
-            //    school.NumberOfBoysSss2 = sch.NumberOfBoysSss2;
-            //    school.NumberOfBoysSss3 = sch.NumberOfBoysSss3;
-
-            //    school.NumberOfGirlsJss1 = sch.NumberOfGirlsJss1;
-            //    school.NumberOfGirlsJss2 = sch.NumberOfGirlsJss2;
-            //    school.NumberOfGirlsJss3 = sch.NumberOfGirlsJss3;
-            //    school.NumberOfGirlsSss1 = sch.NumberOfGirlsSss1;
-            //    school.NumberOfGirlsSss2 = sch.NumberOfGirlsSss2;
-            //    school.NumberOfGirlsSss3 = sch.NumberOfGirlsSss3;
-
-            //    school.TotalNumberOfStudents = sch.TotalNumberOfStudents;
-
-            //    school.NumberOfICTTeachers = sch.NumberOfICTTeachers;
-            //    school.NumberOfCompLabs = sch.NumberOfCompLabs;
-            //    school.NumberOfComputersInLabs = sch.NumberOfComputersInLabs;
-            //    school.NumberOfDesktops = sch.NumberOfDesktops;
-            //    school.Software = sch.Software;
-            //    school.NumberOfLaptops = sch.NumberOfLaptops;
-            //    school.NumberOfColorPrinter = sch.NumberOfColorPrinter;
-            //    school.NumberOfBlackAndWhitePrinter = sch.NumberOfBlackAndWhitePrinter;
-
-            //    school.SecurityWindows = sch.SecurityWindows;
-            //    school.SecurityDoors = sch.SecurityDoors;
-            //    school.SecurityGateman = sch.SecurityGateman;
-            //    school.SecurityNightGuard = sch.SecurityNightGuard;
-
-            //    school.PowerSource_Public = sch.PowerSource_Public;
-            //    school.PowerSource_Solar = sch.PowerSource_Solar;
-            //    school.PowerSource_Generator = sch.PowerSource_Generator;
-            //    school.PowerSource_Iverter = sch.PowerSource_Iverter;
-
-            //    school.TelcoServicesMTN = sch.TelcoServicesMTN;
-            //    school.TelcoServicesAirtel = sch.TelcoServicesAirtel;
-            //    school.TelcoServicesGlo = sch.TelcoServicesGlo;
-            //    school.TelcoServices9Mobile = sch.TelcoServices9Mobile;
-
-            //    school.NetwPerihpRouters = sch.NetwPerihpRouters;
-            //    school.NetwPerihpSwitches = sch.NetwPerihpSwitches;
-            //    school.NetwPerihpCables = sch.NetwPerihpCables;
-            //    school.LAN = sch.LAN;
-            //}
-
             return View(_schools);
         }
 
@@ -119,7 +50,7 @@ namespace AGILEDataPortal.Controllers
         {
             //var _school = new School();
 
-            var domain = "https://localhost:5001/api/schools/GetSchool/";
+            var domain = "https://eregapis-agileapi.azurewebsites.net/api/schools/GetSchool/";
 
 
             using (var httpClient = new HttpClient(_clientHandler))
@@ -130,8 +61,6 @@ namespace AGILEDataPortal.Controllers
                     _school = JsonConvert.DeserializeObject<School>(apiResponse);
                 }
             }
-
-
 
             var school = new SchoolDetailViewModel();
 
@@ -200,12 +129,7 @@ namespace AGILEDataPortal.Controllers
             school.LAN = _school.LAN;
 
 
-
-            //return _school;
-
             return View(school);
-
-
 
         }
         [HttpGet]
@@ -214,7 +138,7 @@ namespace AGILEDataPortal.Controllers
 
             try
             {
-                var domain = "https://localhost:5001/api/schools/GetSchool/";
+                var domain = "https://eregapis-agileapi.azurewebsites.net/api/schools/GetSchool/";
 
 
                 using (var httpClient = new HttpClient(_clientHandler))
@@ -301,136 +225,133 @@ namespace AGILEDataPortal.Controllers
                 throw;
             }
 
-
-
         }
 
         [HttpPost]
         public async Task<IActionResult> Edit(SchoolEditViewModel model)
         {
-            //_school = new School();
-
-            var domainGet = "https://localhost:5001/api/schools/GetSchool/";
-
-
-            var httpClient = new HttpClient(_clientHandler);
-
-
-            var response = await httpClient.GetAsync($"{domainGet}{model.Id}");
-
-            string apiResponse = await response.Content.ReadAsStringAsync();
-            _school = JsonConvert.DeserializeObject<School>(apiResponse);
-
-
-
-            var school = new SchoolEditViewModel();
-
-
-            _school.SchoolId = model.Id;
-            _school.Name = model.Name;
-            _school.UniqueName = model.UniqueName;
-            _school.LGA = model.LGA;
-            _school.Longitude = model.Longitude;
-            _school.Latitude = model.Latitude;
-            _school.ScreenProjector = model.ScreenProjector;
-            _school.Address = model.Address;
-            _school.InternetAvailability = model.InternetAvailability;
-            _school.InternetRating = model.InternetRating;
-            _school.PerimeterFence = model.PerimeterFence;
-            _school.SchoolType1 = model.SchoolType1;
-            _school.SchoolType2 = model.SchoolType2;
-            _school.SchoolType3 = model.SchoolType3;
-            _school.SchoolType4 = model.SchoolType4;
-            _school.TypeOfInternet = model.TypeOfInternet;
-            _school.State = model.State;
-            _school.CCTV = model.CCTV;
-            _school.NumberOfBoysJss1 = model.NumberOfBoysJss1;
-            _school.NumberOfBoysJss2 = model.NumberOfBoysJss2;
-            _school.NumberOfBoysJss3 = model.NumberOfBoysJss2;
-            _school.NumberOfBoysSss1 = model.NumberOfBoysSss1;
-            _school.NumberOfBoysSss2 = model.NumberOfBoysSss2;
-            _school.NumberOfBoysSss3 = model.NumberOfBoysSss3;
-
-            _school.NumberOfGirlsJss1 = model.NumberOfGirlsJss1;
-            _school.NumberOfGirlsJss2 = model.NumberOfGirlsJss2;
-            _school.NumberOfGirlsJss3 = model.NumberOfGirlsJss3;
-            _school.NumberOfGirlsSss1 = model.NumberOfGirlsSss1;
-            _school.NumberOfGirlsSss2 = model.NumberOfGirlsSss2;
-            _school.NumberOfGirlsSss3 = model.NumberOfGirlsSss3;
-
-            _school.TotalNumberOfStudents = model.TotalNumberOfStudents;
-
-            _school.NumberOfICTTeachers = model.NumberOfICTTeachers;
-            _school.NumberOfCompLabs = model.NumberOfCompLabs;
-            _school.NumberOfComputersInLabs = model.NumberOfComputersInLabs;
-            _school.NumberOfDesktops = model.NumberOfDesktops;
-            _school.Software = model.Software;
-            _school.NumberOfLaptops = model.NumberOfLaptops;
-            _school.NumberOfColorPrinter = model.NumberOfColorPrinter;
-            _school.NumberOfBlackAndWhitePrinter = model.NumberOfBlackAndWhitePrinter;
-
-            _school.SecurityWindows = model.SecurityWindows;
-            _school.SecurityDoors = model.SecurityDoors;
-            _school.SecurityGateman = model.SecurityGateman;
-            _school.SecurityNightGuard = model.SecurityNightGuard;
-
-            _school.PowerSource_Public = model.PowerSource_Public;
-            _school.PowerSource_Solar = model.PowerSource_Solar;
-            _school.PowerSource_Generator = model.PowerSource_Generator;
-            _school.PowerSource_Iverter = model.PowerSource_Iverter;
-
-            _school.TelcoServicesMTN = model.TelcoServicesMTN;
-            _school.TelcoServicesAirtel = model.TelcoServicesAirtel;
-            _school.TelcoServicesGlo = model.TelcoServicesGlo;
-            _school.TelcoServices9Mobile = model.TelcoServices9Mobile;
-
-            _school.NetwPerihpRouters = model.NetwPerihpRouters;
-            _school.NetwPerihpSwitches = model.NetwPerihpSwitches;
-            _school.NetwPerihpCables = model.NetwPerihpCables;
-            _school.LAN = model.LAN;
-
-
-            var domainUpdate = "https://localhost:5001/api/schools/UpdateSchool";
-
-            try
+            model.UniqueName = "Name";
+            if (ModelState.IsValid)
             {
-                using (var httpClient1 = new HttpClient(_clientHandler))
-                {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(_school), Encoding.UTF8, "application/json");
+                //_school = new School();
 
-                    using (var response1 = await httpClient.PutAsync(domainUpdate, content))
+                var domainGet = "https://eregapis-agileapi.azurewebsites.net/api/schools/GetSchool/";
+
+
+                var httpClient = new HttpClient(_clientHandler);
+
+
+                var response = await httpClient.GetAsync($"{domainGet}{model.Id}");
+
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                _school = JsonConvert.DeserializeObject<School>(apiResponse);
+
+
+
+                var school = new SchoolEditViewModel();
+
+
+                _school.SchoolId = model.Id;
+                _school.Name = model.Name;
+                _school.UniqueName = model.UniqueName;
+                _school.LGA = model.LGA;
+                _school.Longitude = model.Longitude;
+                _school.Latitude = model.Latitude;
+                _school.ScreenProjector = model.ScreenProjector;
+                _school.Address = model.Address;
+                _school.InternetAvailability = model.InternetAvailability;
+                _school.InternetRating = model.InternetRating;
+                _school.PerimeterFence = model.PerimeterFence;
+                _school.SchoolType1 = model.SchoolType1;
+                _school.SchoolType2 = model.SchoolType2;
+                _school.SchoolType3 = model.SchoolType3;
+                _school.SchoolType4 = model.SchoolType4;
+                _school.TypeOfInternet = model.TypeOfInternet;
+                _school.State = model.State;
+                _school.CCTV = model.CCTV;
+                _school.NumberOfBoysJss1 = model.NumberOfBoysJss1;
+                _school.NumberOfBoysJss2 = model.NumberOfBoysJss2;
+                _school.NumberOfBoysJss3 = model.NumberOfBoysJss2;
+                _school.NumberOfBoysSss1 = model.NumberOfBoysSss1;
+                _school.NumberOfBoysSss2 = model.NumberOfBoysSss2;
+                _school.NumberOfBoysSss3 = model.NumberOfBoysSss3;
+
+                _school.NumberOfGirlsJss1 = model.NumberOfGirlsJss1;
+                _school.NumberOfGirlsJss2 = model.NumberOfGirlsJss2;
+                _school.NumberOfGirlsJss3 = model.NumberOfGirlsJss3;
+                _school.NumberOfGirlsSss1 = model.NumberOfGirlsSss1;
+                _school.NumberOfGirlsSss2 = model.NumberOfGirlsSss2;
+                _school.NumberOfGirlsSss3 = model.NumberOfGirlsSss3;
+
+                _school.TotalNumberOfStudents = model.TotalNumberOfStudents;
+
+                _school.NumberOfICTTeachers = model.NumberOfICTTeachers;
+                _school.NumberOfCompLabs = model.NumberOfCompLabs;
+                _school.NumberOfComputersInLabs = model.NumberOfComputersInLabs;
+                _school.NumberOfDesktops = model.NumberOfDesktops;
+                _school.Software = model.Software;
+                _school.NumberOfLaptops = model.NumberOfLaptops;
+                _school.NumberOfColorPrinter = model.NumberOfColorPrinter;
+                _school.NumberOfBlackAndWhitePrinter = model.NumberOfBlackAndWhitePrinter;
+
+                _school.SecurityWindows = model.SecurityWindows;
+                _school.SecurityDoors = model.SecurityDoors;
+                _school.SecurityGateman = model.SecurityGateman;
+                _school.SecurityNightGuard = model.SecurityNightGuard;
+
+                _school.PowerSource_Public = model.PowerSource_Public;
+                _school.PowerSource_Solar = model.PowerSource_Solar;
+                _school.PowerSource_Generator = model.PowerSource_Generator;
+                _school.PowerSource_Iverter = model.PowerSource_Iverter;
+
+                _school.TelcoServicesMTN = model.TelcoServicesMTN;
+                _school.TelcoServicesAirtel = model.TelcoServicesAirtel;
+                _school.TelcoServicesGlo = model.TelcoServicesGlo;
+                _school.TelcoServices9Mobile = model.TelcoServices9Mobile;
+
+                _school.NetwPerihpRouters = model.NetwPerihpRouters;
+                _school.NetwPerihpSwitches = model.NetwPerihpSwitches;
+                _school.NetwPerihpCables = model.NetwPerihpCables;
+                _school.LAN = model.LAN;
+
+
+                var domainUpdate = "https://eregapis-agileapi.azurewebsites.net/api/schools/UpdateSchool";
+
+                try
+                {
+                    using (var httpClient1 = new HttpClient(_clientHandler))
                     {
-                        string apiResponse1 = await response1.Content.ReadAsStringAsync();
-                        //_school = JsonConvert.DeserializeObject<School>(apiResponse1);
+                        StringContent content = new StringContent(JsonConvert.SerializeObject(_school), Encoding.UTF8, "application/json");
+
+                        using (var response1 = await httpClient.PutAsync(domainUpdate, content))
+                        {
+                            string apiResponse1 = await response1.Content.ReadAsStringAsync();
+                            //_school = JsonConvert.DeserializeObject<School>(apiResponse1);
+                        }
                     }
                 }
+                catch (System.Exception)
+                {
+
+                    throw;
+                }
+
+                ViewBag.message = "Records updated succefully!!!";
+
+                return View();
+
+                //return RedirectToAction(nameof(Index));
+
             }
-            catch (System.Exception)
-            {
-
-                throw;
-            }
-
-
-            //foreach (var job in _jobs)
-            //{
-            //    job.ISCompleted = true;
-            //}
-
-
-            //return _school;
-
-            ViewBag.message = "Records updated succefully!!!";
 
             return View();
-
 
         }
 
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var domain = "https://localhost:5001/api/schools/GetSchool/";
+            var domain = "https://eregapis-agileapi.azurewebsites.net/api/schools/GetSchool/";
 
 
             using (var httpClient = new HttpClient(_clientHandler))
@@ -456,7 +377,7 @@ namespace AGILEDataPortal.Controllers
         {
             string message = "";
 
-            var domain = "https://localhost:5001/api/schools/DeleteSchool?Id=";
+            var domain = "https://eregapis-agileapi.azurewebsites.net/api/schools/DeleteSchool?Id=";
 
             using (var httpClient = new HttpClient(_clientHandler))
             {
@@ -467,8 +388,6 @@ namespace AGILEDataPortal.Controllers
             }
 
             return RedirectToAction(nameof(Index));
-
-
 
         }
     }
